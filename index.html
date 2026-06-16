@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MV1 — Max Verstappen. A vertical drive through the career of a champion. Unofficial fan concept." />
+  <title>MV1 · Max Verstappen — A Vertical Drive</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ░░░ ROTATE-DEVICE HINT (mobile portrait) ░░░ -->
+  <div class="rotate" id="rotate">
+    <div class="rotate__icon">📱</div>
+    <p class="rotate__title">This is a vertical drive</p>
+    <p class="rotate__sub">Best experienced on a larger screen — but scroll on, the lights are about to go out.</p>
+    <button class="rotate__dismiss" id="rotateDismiss">Drive anyway</button>
+  </div>
+
+  <!-- ░░░ INTRO GATE — "LOAD VERSTAPPEN" ░░░ -->
+  <div class="gate" id="gate">
+    <div class="gate__noise"></div>
+    <div class="gate__inner">
+      <p class="gate__eyebrow">MV1 · Est. Hasselt, Belgium</p>
+      <h1 class="gate__name">
+        <span data-gate-line>MAX</span>
+        <span data-gate-line class="accent">VERSTAPPEN</span>
+      </h1>
+      <button class="gate__load" id="gateLoad" aria-label="Load the experience">
+        <svg viewBox="0 0 120 120" class="gate__ring">
+          <circle class="gate__ring-track" cx="60" cy="60" r="54"/>
+          <circle class="gate__ring-fill" id="gateRingFill" cx="60" cy="60" r="54"/>
+        </svg>
+        <span class="gate__load-label" id="gateLabel">LOAD</span>
+      </button>
+      <p class="gate__hint">Tap to start the engine</p>
+    </div>
+  </div>
+
+  <!-- ░░░ CURSOR ░░░ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- ░░░ SCROLL PROGRESS ░░░ -->
+  <div class="scroll-progress"><div class="scroll-progress__bar" id="progressBar"></div></div>
+
+  <!-- ░░░ NAV ░░░ -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__logo" data-magnetic>MV<span>1</span></a>
+    <nav class="nav__links">
+      <a href="#track" data-cursor="hover">On Track</a>
+      <a href="#off" data-cursor="hover">Off Track</a>
+      <a href="#helmets" data-cursor="hover">Helmets</a>
+      <a href="#calendar" data-cursor="hover">Calendar</a>
+      <a href="#store" class="nav__cta" data-magnetic>Store</a>
+    </nav>
+  </header>
+
+  <!-- ░░░ HERO ░░░ -->
+  <section class="hero" id="hero">
+    <div class="hero__layer hero__layer--num" data-depth="0.12">1</div>
+    <div class="hero__layer hero__layer--glow"></div>
+
+    <!-- portrait focal -->
+    <div class="hero__portrait" id="heroPortrait" data-depth="0.06">
+      <img src="assets/max-portrait.jpg" alt="Max Verstappen" class="hero__photo" />
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow" data-hero><span class="dot"></span> Four-time World Champion</p>
+      <h2 class="hero__title">
+        <span class="row" data-split>MAX</span>
+        <span class="row row--out" data-split>VERSTAPPEN</span>
+      </h2>
+      <p class="hero__tag" data-hero>Born to overtake. Wired for the limit. This is the drive — vertical, relentless, flat out.</p>
+      <div class="hero__meta" data-hero>
+        <span><b>#1</b> Car Number</span>
+        <span><b>NED</b> Nationality</span>
+        <span><b>200+</b> Grand Prix</span>
+      </div>
+    </div>
+
+    <a href="#quote" class="hero__scroll" data-cursor="hover"><span>Scroll</span><i></i></a>
+  </section>
+
+  <!-- ░░░ MARQUEE ░░░ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track" id="marquee">
+      <span>SUPER MAX</span><em>★</em><span>LIGHTS OUT</span><em>★</em>
+      <span>SIMPLY LOVELY</span><em>★</em><span>ORANGE ARMY</span><em>★</em>
+      <span>GP GP GP</span><em>★</em><span>FLAT OUT</span><em>★</em>
+    </div>
+  </div>
+
+  <!-- ░░░ QUOTE / SIGNATURE ░░░ -->
+  <section class="quote" id="quote">
+    <p class="quote__label" data-fade>// In his words</p>
+    <blockquote class="quote__text">
+      <span data-lines>I always give everything. Second is just the first of the losers —</span>
+      <span data-lines>so I keep pushing, every lap, until the flag falls.</span>
+    </blockquote>
+    <svg class="quote__sign" viewBox="0 0 360 120" id="signature" aria-label="Signature">
+      <path id="sigPath" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+        d="M20 80 C30 30 45 30 50 80 C54 40 70 40 74 80 C95 30 110 100 130 70 C140 55 150 60 156 80 C162 95 180 95 186 70 C196 30 210 110 232 60 C244 34 262 40 262 70 C262 92 244 96 236 84 M270 50 C300 40 320 60 300 78 C285 90 270 70 295 64 C320 58 340 70 350 50"/>
+    </svg>
+    <p class="quote__by" data-fade>— MV1</p>
+  </section>
+
+  <!-- ░░░ SCROLL-REVEAL PORTRAIT ░░░ -->
+  <section class="reveal" id="reveal">
+    <div class="reveal__frame">
+      <img src="assets/max-portrait.jpg" alt="Max Verstappen" class="reveal__img" id="revealImg" />
+      <div class="reveal__scrim"></div>
+    </div>
+    <div class="reveal__caption">
+      <p class="section-label" data-fade><span class="dot"></span> The Champion</p>
+      <h2 class="reveal__title">
+        <span data-split>BORN TO</span>
+        <span data-split class="accent">RACE</span>
+      </h2>
+      <p class="reveal__sub" data-fade>From karting prodigy to four-time world champion — the relentless pursuit, frame by frame.</p>
+    </div>
+  </section>
+
+  <!-- ░░░ HORIZONTAL GALLERY ░░░ -->
+  <section class="gallery" id="gallery">
+    <div class="gallery__intro">
+      <p class="section-label"><span class="dot"></span> The Reel</p>
+      <h2 class="section-title">MOMENTS IN <em>MOTION</em></h2>
+      <p class="gallery__hint">The story rolls sideways →</p>
+    </div>
+    <div class="gallery__viewport" id="galViewport">
+      <div class="gallery__track" id="galTrack">
+        <figure class="shot" data-shot style="--g:linear-gradient(135deg,#ff6a00,#7a1f00)">
+          <div class="shot__img"><span class="shot__big">01</span></div>
+          <figcaption><b>Lights Out</b><span>The launch — where races are won.</span></figcaption>
+        </figure>
+        <figure class="shot" data-shot style="--g:linear-gradient(135deg,#1b2a6b,#06070f)">
+          <div class="shot__img"><span class="shot__big">02</span></div>
+          <figcaption><b>Apex Hunter</b><span>Late on the brakes, early on the power.</span></figcaption>
+        </figure>
+        <figure class="shot" data-shot style="--g:linear-gradient(135deg,#ff8a2b,#3a1500)">
+          <div class="shot__img"><span class="shot__big">03</span></div>
+          <figcaption><b>Wheel to Wheel</b><span>No lift. No prisoners.</span></figcaption>
+        </figure>
+        <figure class="shot" data-shot style="--g:linear-gradient(135deg,#0a2a4a,#020308)">
+          <div class="shot__img"><span class="shot__big">04</span></div>
+          <figcaption><b>Pole Position</b><span>One lap, everything on the edge.</span></figcaption>
+        </figure>
+        <figure class="shot" data-shot style="--g:linear-gradient(135deg,#ff6a00,#1b2a6b)">
+          <div class="shot__img"><span class="shot__big">05</span></div>
+          <figcaption><b>Chequered Flag</b><span>The only colour that matters.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ ON TRACK / OFF TRACK SPLIT ░░░ -->
+  <section class="split" id="track">
+    <article class="split__panel split__panel--track" data-panel id="trackPanel">
+      <span class="split__kicker">01 — On Track</span>
+      <h2 class="split__title">THE <em>RACER</em></h2>
+      <p>Calculated aggression at 350 km/h. A relationship with the car most drivers never reach — feeling grip a tenth before it arrives, and using every centimetre of the circuit like it was drawn for him.</p>
+      <ul class="split__stats">
+        <li><b data-count="4" data-suffix="×">0</b><span>World Titles</span></li>
+        <li><b data-count="60" data-suffix="+">0</b><span>Race Wins</span></li>
+        <li><b data-count="40" data-suffix="+">0</b><span>Pole Positions</span></li>
+      </ul>
+    </article>
+    <article class="split__panel split__panel--off" data-panel id="off">
+      <span class="split__kicker">02 — Off Track</span>
+      <h2 class="split__title">THE <em>PERSON</em></h2>
+      <p>Away from the visor: sim racing into the night, a competitive streak that never switches off, and a loyalty to the people who got him to the grid. Same intensity, different cockpit.</p>
+      <ul class="split__tags">
+        <li>Sim Racing</li><li>Karting Roots</li><li>Team Redline</li><li>The Orange Army</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- ░░░ CAR BANNER (parallax) ░░░ -->
+  <section class="machine" id="machine">
+    <div class="machine__media"><img src="assets/rb-car.jpg" alt="Red Bull Racing car" id="machineImg" /></div>
+    <div class="machine__overlay">
+      <p class="section-label" data-fade><span class="dot"></span> The Machine</p>
+      <h2 class="machine__title" data-fade>RAW <em>HORSEPOWER</em></h2>
+      <p class="machine__sub" data-fade>1000+ bhp of hybrid fury, sculpted by airflow. The weapon behind the number one.</p>
+    </div>
+  </section>
+
+  <!-- ░░░ HELMET HALL OF FAME ░░░ -->
+  <section class="helmets" id="helmets">
+    <div class="helmets__head">
+      <p class="section-label" data-fade><span class="dot"></span> Hall of Fame</p>
+      <h2 class="section-title" data-fade>THE <em>HELMETS</em></h2>
+      <p class="helmets__hint" data-fade>Hover a lid to see the alternate livery.</p>
+    </div>
+    <div class="helmets__grid" id="helmetGrid"><!-- injected by JS --></div>
+  </section>
+
+  <!-- ░░░ CALENDAR STRIP ░░░ -->
+  <section class="cal" id="calendar">
+    <div class="cal__head">
+      <p class="section-label" data-fade><span class="dot"></span> Next Up</p>
+      <h2 class="section-title" data-fade>THE <em>SCHEDULE</em></h2>
+    </div>
+    <ul class="cal__list" id="calList"><!-- injected by JS --></ul>
+  </section>
+
+  <!-- ░░░ STORE ░░░ -->
+  <section class="store" id="store">
+    <div class="store__head">
+      <p class="section-label" data-fade><span class="dot"></span> The Drop</p>
+      <h2 class="section-title" data-fade>WEAR THE <em>NUMBER</em></h2>
+    </div>
+    <div class="store__grid" id="storeGrid"><!-- injected by JS --></div>
+  </section>
+
+  <!-- ░░░ PARTNERS ░░░ -->
+  <section class="partners" id="partners">
+    <p class="section-label" data-fade><span class="dot"></span> In Partnership</p>
+    <div class="partners__grid" id="partnerGrid"><!-- injected by JS --></div>
+  </section>
+
+  <!-- ░░░ SOCIAL FEED ░░░ -->
+  <section class="social" id="social">
+    <div class="social__head">
+      <p class="section-label" data-fade><span class="dot"></span> The Feed</p>
+      <h2 class="section-title" data-fade>JOIN THE <em>ARMY</em></h2>
+    </div>
+    <div class="social__grid" id="socialGrid"><!-- injected by JS --></div>
+  </section>
+
+  <!-- ░░░ FOOTER ░░░ -->
+  <footer class="footer">
+    <div class="footer__cta">
+      <h2 class="footer__big" data-fade>FLAT <em>OUT.</em></h2>
+      <a href="#hero" class="btn btn--primary btn--lg" data-magnetic><span>Back to the grid ↑</span></a>
+    </div>
+    <div class="footer__row">
+      <span class="footer__logo">MV<span>1</span></span>
+      <nav class="footer__nav">
+        <a href="#track" data-cursor="hover">On Track</a>
+        <a href="#off" data-cursor="hover">Off Track</a>
+        <a href="#helmets" data-cursor="hover">Helmets</a>
+        <a href="#store" data-cursor="hover">Store</a>
+      </nav>
+      <div class="footer__social">
+        <a href="#" data-cursor="hover">IG</a><a href="#" data-cursor="hover">YT</a>
+        <a href="#" data-cursor="hover">X</a><a href="#" data-cursor="hover">TT</a>
+      </div>
+    </div>
+    <p class="footer__legal">© 2026 — Unofficial fan concept. Built with GSAP, ScrollTrigger & SplitText. Not affiliated with Max Verstappen, Red Bull or Formula 1.</p>
+  </footer>
+
+  <!-- ░░░ GSAP (all plugins free since v3.13) ░░░ -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
