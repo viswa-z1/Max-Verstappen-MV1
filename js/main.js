@@ -11,7 +11,7 @@ window.scrollTo(0, 0);
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isTouch = window.matchMedia('(hover: none)').matches;
 
-/* ───────────── SVG helmet artwork (original, two-tone) ───────────── */
+/* ───────────── SVG helmet artwork (original, two-tone) but need to change it to actual helmets ───────────── */
 function helmetSVG() {
   return `
   <svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
