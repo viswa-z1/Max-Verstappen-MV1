@@ -27,24 +27,7 @@ function helmetSVG() {
 
 /* ───────────── Build dynamic grids ───────────── */
 function buildGrids() {
-  // Helmet hall of fame
-  const helmets = [
-    { y: '2025', n: 'Title Defence', shell: '#ff6a00', acc: '#16204a' },
-    { y: '2024', n: 'Champion Gold', shell: '#2c44b0', acc: '#ff8a2b' },
-    { y: '2023', n: 'Record Breaker', shell: '#e21133', acc: '#16204a' },
-    { y: '2022', n: 'Back to Back', shell: '#3551d6', acc: '#ff6a00' },
-    { y: '2021', n: 'First Crown', shell: '#ff6a00', acc: '#0a0c16' },
-    { y: '2020', n: 'Home Hero', shell: '#4a5694', acc: '#ff8a2b' },
-    { y: '2019', n: 'The Charge', shell: '#1d77c0', acc: '#ff6a00' },
-    { y: '2018', n: 'Young Gun', shell: '#ff8a2b', acc: '#2c44b0' }
-  ];
-  const hg = document.getElementById('helmetGrid');
-  if (hg) hg.innerHTML = helmets.map(h => `
-    <div class="helmet-card" data-helmet data-helmet-img style="--shell:${h.shell};--acc:${h.acc}">
-      <div class="helmet-card__lid"><img src="assets/helmet.jpg" alt="Max Verstappen race helmet — ${h.y} ${h.n}" loading="lazy" /></div>
-      <div class="helmet-card__year">${h.y}</div>
-      <div class="helmet-card__name">${h.n}</div>
-    </div>`).join('');
+  // (Helmet section is now a static showcase — see #helmets / feature 29.)
 
   // Calendar
   const races = [

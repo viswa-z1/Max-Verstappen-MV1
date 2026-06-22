@@ -192,14 +192,28 @@
     </div>
   </section>
 
-  <!-- ░░░ HELMET HALL OF FAME ░░░ -->
+  <!-- ░░░ THE HELMET (showcase) ░░░ -->
   <section class="helmets" id="helmets">
-    <div class="helmets__head">
-      <p class="section-label" data-fade><span class="dot"></span> Hall of Fame</p>
-      <h2 class="section-title" data-fade>THE <em>HELMETS</em></h2>
-      <p class="helmets__hint" data-fade>Hover a lid for full colour — click to inspect.</p>
+    <div class="lid">
+      <div class="lid__stage" id="lidStage">
+        <div class="lid__halo"></div>
+        <div class="lid__glow"></div>
+        <img src="assets/helmet.jpg" alt="Max Verstappen race helmet" class="lid__img" id="lidImg" />
+        <span class="lid__tag">Tap to inspect</span>
+      </div>
+      <div class="lid__info">
+        <p class="section-label" data-fade><span class="dot"></span> The Lid</p>
+        <h2 class="section-title" data-fade>CARBON.<br>KEVLAR.<br><em>COURAGE.</em></h2>
+        <p class="lid__desc" data-fade>The one piece of kit that never leaves his side — built to take a 200&nbsp;km/h impact and the weight of a title fight, all at once.</p>
+        <ul class="lid__specs" data-fade>
+          <li><b>FIA 8860</b><span>Safety standard</span></li>
+          <li><b>~1.3 kg</b><span>Total weight</span></li>
+          <li><b>Carbon · aramid</b><span>Shell construction</span></li>
+          <li><b>2018 — 2025</b><span>Championship era</span></li>
+        </ul>
+        <button class="lid__btn" id="lidInspect" data-magnetic>Inspect the helmet ↗</button>
+      </div>
     </div>
-    <div class="helmets__grid" id="helmetGrid"><!-- injected by JS --></div>
   </section>
 
   <!-- ░░░ CALENDAR STRIP ░░░ -->
@@ -299,5 +313,6 @@
   <script defer src="js/features/32-share-link.js"></script>
   <script defer src="js/features/33-garage-reset.js"></script>
   <script defer src="js/features/34-attract-mode.js"></script>
+  <script defer src="js/features/35-scroll-3d-tilt.js"></script>
 </body>
 </html>
