@@ -40,18 +40,11 @@ function buildGrids() {
   ];
   const hg = document.getElementById('helmetGrid');
   if (hg) hg.innerHTML = helmets.map(h => `
-    <div class="helmet-card" data-helmet style="--shell:${h.shell};--acc:${h.acc}">
-      <div class="helmet-card__lid">${helmetSVG()}</div>
+    <div class="helmet-card" data-helmet data-helmet-img style="--shell:${h.shell};--acc:${h.acc}">
+      <div class="helmet-card__lid"><img src="assets/helmet.jpg" alt="Max Verstappen race helmet — ${h.y} ${h.n}" loading="lazy" /></div>
       <div class="helmet-card__year">${h.y}</div>
       <div class="helmet-card__name">${h.n}</div>
     </div>`).join('');
-  // apply colours to the freshly-injected helmet paths
-  document.querySelectorAll('#helmetGrid .helmet-card').forEach(card => {
-    const shell = getComputedStyle(card).getPropertyValue('--shell').trim();
-    const acc = getComputedStyle(card).getPropertyValue('--acc').trim();
-    card.querySelectorAll('.h-shell').forEach(p => p.style.fill = shell);
-    card.querySelectorAll('.h-acc').forEach(p => p.style.fill = acc);
-  });
 
   // Calendar
   const races = [

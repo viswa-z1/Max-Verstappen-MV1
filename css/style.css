@@ -276,16 +276,15 @@ img, svg { display: block; max-width: 100%; }
 .helmet-card::before{ content:""; position:absolute; inset:0; background: radial-gradient(80% 60% at 50% 0%, var(--shell), transparent 60%); opacity:.12; transition:opacity .5s; }
 .helmet-card:hover{ transform: translateY(-8px); border-color: var(--shell); }
 .helmet-card:hover::before{ opacity:.28; }
-.helmet-card__lid{ position:relative; border-radius:10px; padding:.4rem;
-  background: radial-gradient(70% 60% at 50% 45%, rgba(255,255,255,.10), rgba(255,255,255,.02) 70%, transparent); }
-.helmet-card svg{ width:100%; height:auto; position:relative; transition: transform .6s var(--ease);
-  filter: drop-shadow(0 8px 14px rgba(0,0,0,.5)); }
-.helmet-card:hover svg{ transform: rotate(-8deg) scale(1.05); }
-.helmet-card .h-shell{ fill: var(--shell); transition: fill .4s; }
-.helmet-card .h-acc{ fill: var(--acc); transition: fill .4s; }
-.helmet-card .h-visor{ fill: #0a0c16; }
-.helmet-card:hover .h-shell{ fill: var(--acc); }
-.helmet-card:hover .h-acc{ fill: var(--shell); }
+.helmet-card__lid{ position:relative; border-radius:8px; overflow:hidden; aspect-ratio:1; background:#0a0c16; cursor:zoom-in; }
+.helmet-card__lid img{ width:100%; height:100%; object-fit:cover; display:block;
+  filter:grayscale(.82) contrast(1.06) brightness(.9); transition:filter .5s var(--ease), transform .7s var(--ease); }
+.helmet-card__lid::after{ content:''; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(155deg, var(--shell), var(--acc)); mix-blend-mode:overlay; opacity:.62; transition:opacity .5s; }
+.helmet-card__lid::before{ content:''; position:absolute; inset:0; z-index:2;
+  background:linear-gradient(to top, rgba(6,7,15,.55), transparent 55%); }
+.helmet-card:hover .helmet-card__lid img{ filter:none; transform:scale(1.07); }
+.helmet-card:hover .helmet-card__lid::after{ opacity:0; }
 .helmet-card__year{ font-family:var(--font-display); font-size:1.6rem; position:relative; margin-top:1rem; }
 .helmet-card__name{ color:var(--muted); font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; position:relative; }
 
